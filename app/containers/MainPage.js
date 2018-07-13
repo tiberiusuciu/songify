@@ -26,7 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 		},
 		onSubmitLink: (link) => {
 			dispatch(sendLink(link));
-		},
+		},                                                           
 	};
 };
 

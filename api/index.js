@@ -6,6 +6,8 @@ var webpackDevMiddleWare = require('webpack-dev-middleware');
 var webpackHotMiddleWare = require('webpack-hot-middleware');
 var Game = require('./engine/Game.js');
 var config = require('../config.js');
+var find = require('find');
+var fs = require('fs');
 
 var app = express();
 
@@ -36,7 +38,6 @@ server.listen(port, function(error) {
 var game = new Game();
 
 var link = "";
-
 io.on('connection', function (socket) {
 
 	// Making new user here
@@ -48,7 +49,24 @@ io.on('connection', function (socket) {
 			case config.actionConst.SUBMIT_LINK:
 				console.log("WE IN", action.link);
 				link = action.link;
-				io.emit('action', link);
+
+				var child = require('child_process').execFile;
+				var executablePath = "C:\\Users\\Core\\Documents\\labs\\songify\\lib\\youtube-dl.exe";
+				var parameters = ["-x --audio-format 'mp3' --ffmpeg-location 'C:\\Users\\Core\\Documents\\labs\\songify\\lib\\ffmpeg.exe'", link, '-o %(title)s.%(ext)s'];
+
+				child(executablePath, parameters, function(err, data) {
+					console.log("THIS IS ERROR:", err)
+					//console.log("THIS IS DATA", data.toString());
+
+					if (data) {
+						var dataPath = data.match(/Destination:.*/i);
+						//console.log(dataPath);
+						var filename = dataPath[0].substring(14);
+						console.log(filename);
+					}
+				});
+				io.emit('action', {type: config.actionConst.MUSIC_DOWNLOAD, meta: {remote: false}});
+
 		}
 	})
 

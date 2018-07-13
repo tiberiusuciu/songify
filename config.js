@@ -8,6 +8,7 @@ module.exports = {
 		NEW_USER: 'NEW_USER',
 		UPDATE_LINK: 'UPDATE_LINK',
 		SUBMIT_LINK: 'SUBMIT_LINK',
+		MUSIC_DOWNLOAD: 'MUSIC_DOWNLOAD',
 	},
 	commandNames: {
 		EAT: 'eat',
