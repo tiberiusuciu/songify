@@ -22,6 +22,16 @@
 	margin: auto;
 }
 
+:local(.downloadButton) {
+	background-color: green;
+	margin: auto;
+	margin-top: 50px;
+	color: white;
+	font-weight: bolder;
+	height: 50px;
+	line-height: 50px;
+}
+
 :local(.submitElement) {
 	width: 250px;
 	margin-top: 50px;

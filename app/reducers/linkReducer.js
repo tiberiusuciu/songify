@@ -18,7 +18,7 @@ const link = (state = '', action) => {
 const musiclink = (state = '', action) => {
 	switch (action.type) {
 		case MUSIC_DOWNLOAD:
-			return window.location.host + "/public/music/" + action.filename;
+			return window.location.host + "/music/" + action.filename;
 		default:
 			return state;
 	}
@@ -27,7 +27,7 @@ const musiclink = (state = '', action) => {
 const hidebutton = (state = true, action) => {
 	switch (action.type) {
 		case MUSIC_DOWNLOAD:
-			return true;
+			return false;
 		default:
 			return state;
 	}

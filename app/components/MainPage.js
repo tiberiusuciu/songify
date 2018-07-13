@@ -15,8 +15,16 @@ class MainPage extends Component {
 	// 	this.props.onLinkChange(e.target.value);
 	// }
 
+	checkForVisible(check) {
+		if (check) {
+			return "none";
+		}
+		else {
+			return "block";
+		}
+	}
+
 	render() {
-		console.log(window);
 
 		return (
 			<div className={"row " + styles.mainRowStyling + " " + styles.mainBody}>
@@ -28,7 +36,7 @@ class MainPage extends Component {
 							this.props.onSubmitLink(this.props.link)
 						}}/>
 					</form>
-					<div><a href={this.props.musiclink} style={{display: this.props.hidebutton ? "hidden" : "visible"}}>Get Music!</a></div>
+					<div className={styles.downloadButton} style={{display: this.checkForVisible(this.props.hidebutton)}}><div>{this.props.musiclink}</div></div>
 				</div>
 			</div>
 		)
@@ -39,7 +47,7 @@ export default MainPage;
 
 
 // <NavigatorBar />
-// <div className={"col-12 " + styles.noPadding}>
+// <div classNamehttps://www.youtube.com/watch?v=diLp6hUqvVkhttps://www.youtube.com/watch?v=diLp6hUqvVk={"col-12 " + styles.noPadding}>
 // <DashBoard />
 // </div>
 // <div className={"col-12 " + styles.noPadding}>
