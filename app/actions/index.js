@@ -9,6 +9,7 @@ export const INVALID_COMMAND = config.actionConst.INVALID_COMMAND;
 export const NEW_USER = config.actionConst.NEW_USER;
 export const UPDATE_LINK = config.actionConst.UPDATE_LINK;
 export const SUBMIT_LINK = config.actionConst.SUBMIT_LINK;
+export const MUSIC_DOWNLOAD = config.actionConst.MUSIC_DOWNLOAD;
 
 function action(type, payload = {}) {
 	return { type, ...payload };

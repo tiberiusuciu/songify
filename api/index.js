@@ -6,7 +6,6 @@ var webpackDevMiddleWare = require('webpack-dev-middleware');
 var webpackHotMiddleWare = require('webpack-hot-middleware');
 var Game = require('./engine/Game.js');
 var config = require('../config.js');
-var find = require('find');
 var fs = require('fs');
 
 var app = express();
@@ -47,26 +46,20 @@ io.on('connection', function (socket) {
 	socket.on("action", function (action) {
 		switch (action.type) {
 			case config.actionConst.SUBMIT_LINK:
-				console.log("WE IN", action.link);
 				link = action.link;
 
-				var child = require('child_process').execFile;
-				var executablePath = "C:\\Users\\Core\\Documents\\labs\\songify\\lib\\youtube-dl.exe";
-				var parameters = ["-x --audio-format 'mp3' --ffmpeg-location 'C:\\Users\\Core\\Documents\\labs\\songify\\lib\\ffmpeg.exe'", link, '-o %(title)s.%(ext)s'];
+				var child = require('child_process').exec;
+				var executablePath = __dirname + "/../lib/youtube-dl -x --audio-format 'mp3' --ffmpeg-location " + __dirname + "/../lib/ffmpeg " + link + ' -o ' + __dirname + '\'/public/music/%(title)s.%(ext)s\'';
 
-				child(executablePath, parameters, function(err, data) {
-					console.log("THIS IS ERROR:", err)
-					//console.log("THIS IS DATA", data.toString());
-
-					if (data) {
-						var dataPath = data.match(/Destination:.*/i);
-						//console.log(dataPath);
-						var filename = dataPath[0].substring(14);
-						console.log(filename);
-					}
+				child(executablePath, function(err, stdout, stderr) {
+          if (stderr) {
+            console.log("THIS IS ERROR:", stderr)
+          }
+          console.log(stdout);
+          var pattern = "(?!(.*/?m?u?s?i?c?/))(.*.mp3)";
+					var filename = stdout.match(pattern)[0];
+          io.emit('action', {type: config.actionConst.MUSIC_DOWNLOAD, meta: {remote: false}, filename: filename});
 				});
-				io.emit('action', {type: config.actionConst.MUSIC_DOWNLOAD, meta: {remote: false}});
-
 		}
 	})
 

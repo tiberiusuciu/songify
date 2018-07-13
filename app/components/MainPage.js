@@ -17,12 +17,18 @@ class MainPage extends Component {
 
 	render() {
 		console.log(window);
-		
+
 		return (
 			<div className={"row " + styles.mainRowStyling + " " + styles.mainBody}>
 				<div className={styles.contentAlignment}>
-					<input placeholder="- Link for youtube video here -" className={styles.inputElement} onChange={(e) => {this.props.onLinkChange(e.target.value);}} value={this.props.link} />
-					<input type="submit" className={styles.submitElement} onClick={() => {this.props.onSubmitLink(this.props.link)}}/>
+					<form>
+						<input placeholder="- Link for youtube video here -" className={styles.inputElement} onChange={(e) => {this.props.onLinkChange(e.target.value);}} value={this.props.link} />
+						<input type="submit" className={styles.submitElement} onClick={(e) => {
+							e.preventDefault();
+							this.props.onSubmitLink(this.props.link)
+						}}/>
+					</form>
+					<div><a href={this.props.musiclink} style={{display: this.props.hidebutton ? "hidden" : "visible"}}>Get Music!</a></div>
 				</div>
 			</div>
 		)

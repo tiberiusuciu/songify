@@ -1,6 +1,7 @@
 import {
 	UPDATE_LINK,
 	SUBMIT_LINK,
+	MUSIC_DOWNLOAD
 } from '../actions';
 
 const link = (state = '', action) => {
@@ -14,6 +15,26 @@ const link = (state = '', action) => {
 	}
 };
 
+const musiclink = (state = '', action) => {
+	switch (action.type) {
+		case MUSIC_DOWNLOAD:
+			return window.location.host + "/public/music/" + action.filename;
+		default:
+			return state;
+	}
+}
+
+const hidebutton = (state = true, action) => {
+	switch (action.type) {
+		case MUSIC_DOWNLOAD:
+			return true;
+		default:
+			return state;
+	}
+}
+
 export default ({
 	link,
+	musiclink,
+	hidebutton,
 });

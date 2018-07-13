@@ -15,18 +15,20 @@ const _parser = (username, userCurrentInput) => {
 const mapStateToProps = (state, ownProps) => {
 	return {
 		link: state.link,
+		musiclink: state.musiclink,
+		hidebutton: state.hidebutton,
 		// referredId: ownProps.location.query.referredId,
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		onLinkChange: (link) => {			
+		onLinkChange: (link) => {
 			dispatch(setLink(link));
 		},
 		onSubmitLink: (link) => {
 			dispatch(sendLink(link));
-		},                                                           
+		},
 	};
 };
 
