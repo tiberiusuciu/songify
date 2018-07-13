@@ -7,8 +7,7 @@ import { merge } from 'lodash';
 // import config from '../config.js';
 
 // Reducers
-import terminalBoxReducer from './terminalBoxReducer.js';
-import userReducer from './userReducer.js';
+import linkReducer from './linkReducer.js';
 
 function entities(state = { usage:0 }, action) {
 	if (action.response && action.response.entities) {
@@ -32,6 +31,5 @@ function entities(state = { usage:0 }, action) {
 export default combineReducers({
 	routing,
 	entities,
-	...terminalBoxReducer,
-	...userReducer,
+	...linkReducer
 });

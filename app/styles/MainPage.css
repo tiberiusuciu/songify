@@ -8,6 +8,25 @@
 	padding-bottom: 40px;
 }
 
+:local(.contentAlignment) {
+	display: block;
+	margin-top: 200px;
+	width: 100%;
+	text-align: center;
+}
+
+:local(.inputElement) {
+	width: 500px;
+	text-align: center;
+	display: block;
+	margin: auto;
+}
+
+:local(.submitElement) {
+	width: 250px;
+	margin-top: 50px;
+}
+
 :local(.MenuSelectionRow) {
 	/* width: 100%; */
 }

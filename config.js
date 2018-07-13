@@ -6,6 +6,8 @@ module.exports = {
 		SEND_COMMAND: 'SEND_COMMAND',
 		INVALID_COMMAND: 'INVALID_COMMAND',
 		NEW_USER: 'NEW_USER',
+		UPDATE_LINK: 'UPDATE_LINK',
+		SUBMIT_LINK: 'SUBMIT_LINK',
 	},
 	commandNames: {
 		EAT: 'eat',

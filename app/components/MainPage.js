@@ -3,25 +3,26 @@ import React, { Component } from 'react';
 // import PostList from './PostList';
 // import DashBoard from './DashBoard';
 // import NavigatorBar from './NavigatorBar';
-import MenuSelection from './MenuSelection';
-import SearchBox from './SearchBox';
-import Dashboard from './Dashboard';
+// import MenuSelection from './MenuSelection';
+// import SearchBox from './SearchBox';
+// import Dashboard from './Dashboard';
 
 import styles from '../styles/MainPage.css';
 
 class MainPage extends Component {
+
+	// linkChange(e) {
+	// 	this.props.onLinkChange(e.target.value);
+	// }
+
 	render() {
+		console.log(window);
+		
 		return (
 			<div className={"row " + styles.mainRowStyling + " " + styles.mainBody}>
-				<div className={"col-12"}>
-					<MenuSelection />
-					<div className={"row"}>
-						<div className={"col " + styles.quationText}>
-							<span>"Un ingénieur ne travaille jamais seul, il sera</span><br /><span>toujours en collaboration avec ses confrère"</span>
-						</div>
-					</div>
-					<SearchBox />
-					<Dashboard />
+				<div className={styles.contentAlignment}>
+					<input placeholder="- Link for youtube video here -" className={styles.inputElement} onChange={(e) => {this.props.onLinkChange(e.target.value);}} value={this.props.link} />
+					<input type="submit" className={styles.submitElement} onClick={() => {this.props.onSubmitLink(this.props.link)}}/>
 				</div>
 			</div>
 		)

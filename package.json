@@ -1,13 +1,13 @@
 {
-  "name": "rpg-io",
+  "name": "songify",
   "version": "1.0.0",
-  "description": "Terminal based mmorpg",
+  "description": "Tool for my friends",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "nodemon api/index.js --ignore components"
   },
   "main": "index.js",
-  "repository": "git@github.com:tiberiusuciu/rpg-io.git",
+  "repository": "git@github.com:tiberiusuciu/songify.git",
   "author": "Tiberiu Cristian Suciu <tiberiu.cristian.suciu@gmail.com>",
   "license": "MIT",
   "dependencies": {

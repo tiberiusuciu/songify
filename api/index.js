@@ -35,6 +35,8 @@ server.listen(port, function(error) {
 // Oracle section
 var game = new Game();
 
+var link = "";
+
 io.on('connection', function (socket) {
 
 	// Making new user here
@@ -43,9 +45,10 @@ io.on('connection', function (socket) {
 
 	socket.on("action", function (action) {
 		switch (action.type) {
-			case config.actionConst.SEND_COMMAND:
-				let response = game.commandReceived(action.parsedCommand);
-				io.emit('action', response);
+			case config.actionConst.SUBMIT_LINK:
+				console.log("WE IN", action.link);
+				link = action.link;
+				io.emit('action', link);
 		}
 	})
 
