@@ -1,0 +1,201 @@
+:local(.mainRowStyling) {
+	margin: 0px;
+	padding: 0px;
+}
+
+:local(.mainBody) {
+	background-color: white;
+	padding-bottom: 40px;
+}
+
+:local(.MenuSelectionRow) {
+	/* width: 100%; */
+}
+
+:local(.MenuSelectionButton) {
+	border-bottom: 1px solid black;
+	text-align: center;
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	transition: background-color 0.2s;
+}
+
+:local(.MenuSelectionButton:hover) {
+	border-bottom: 1px solid black;
+	text-align: center;
+	font-weight: bold;
+	height: 50px;
+	line-height: 50px;
+	background-color: #eee;
+}
+
+:local(.MenuSelectionButtonActive) {
+	color: white;
+	background-color: #333;
+	transition: background-color 0.2s;
+}
+
+:local(.MenuSelectionButtonActive:hover) {
+	color: white;
+	background-color: #444;
+}
+
+:local(.quationText) {
+	margin-top: 90px;
+	text-align: center;
+	color:#ccc;
+	font-weight: bold;
+	font-style: italic;
+}
+
+:local(.searchText) {
+	margin-top: 90px;
+	text-align: center;
+	font-weight: bold;
+}
+
+:local(.searchBox) {
+	margin-top: 10px;
+	text-align: center;
+	font-weight: bold;
+}
+
+:local(.searchBox input) {
+	width: 400px;
+	text-align: center;
+}
+
+:local(.DashBoard) {
+	margin-top: 80px;
+	padding: 0px 20px;
+}
+
+:local(.dashboardList) {
+	border: 1px solid black;
+	width: 400px;
+	height: 400px;
+}
+
+:local(.dashboardProfile) {
+	width: 400px;
+	height: 400px;
+	margin: 0px 10px;
+	border: 1px solid black;
+	margin-top: 30px;
+	padding-left: 43px;
+}
+
+:local(.dashboardListContainer) {
+	width: 400px;
+	height: 400px;
+	margin: 0px 10px;
+	margin-bottom: 10px;
+}
+
+:local(.dashboardTab) {
+	height: 30px;
+}
+
+:local(.tabOption) {
+	height: 100%;
+	line-height: 30px;
+	display: inline-block;
+	width: 50px;
+	text-align: center;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
+	transition: font-size 0.5s;
+	transition: background-color 0.5s;
+}
+
+:local(.tabOption:hover) {
+	font-size: 18px;
+	background-color: #eee;
+}
+
+:local(.tabOptionEnd) {
+	border-right: 1px solid black;
+}
+
+:local(.tutorList) {
+	width: 100%;
+	height: 80px;
+	padding: 10px 10px 0px 10px;
+}
+
+:local(.dashboardList) {
+	overflow-y: scroll;
+}
+
+:local(.userListFirstRow) {
+	width: 100%;
+}
+
+:local(.inlineUserStats) {
+	display: inline-block;
+	width: 70%;
+}
+
+:local(.userListRightAlign) {
+	text-align: right;
+	width: 30%;
+}
+
+:local(.userListInnerInfoSpacing) {
+	margin-top: 10px;
+}
+
+:local(.userListInnerSeparation) {
+	height: 1px;
+	background-color: black;
+	width: 300px;
+	margin: auto;
+}
+
+:local(.starHeight) {
+	height: 17px !important;
+}
+
+:local(.userlistName) {
+	color: #aaa;
+	font-style: italic;
+}
+
+:local(.profilePicture) {
+	width: 125px;
+	height: 125px;
+	background-color: wheat;
+	background-repeat: no-repeat;
+  background-size:cover;
+	background-position: right;
+	border-radius: 50%;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	font-size: 50px;
+	line-height: 100px;
+	margin-top: 20px;
+	display: inline-block;
+}
+
+:local(.profileName) {
+	display: block;
+}
+
+:local(.profileDescription) {
+	margin-top: 48px;
+	display: inline-block;
+	vertical-align:top;
+	margin-left: 20px;
+}
+
+:local(.profileStars) {
+	display: inline-block;
+}
+
+:local(.profileInlineRatings) {
+	display: inline-block;
+	margin-left: 20px;
+}
