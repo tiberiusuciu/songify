@@ -4,7 +4,8 @@
   "description": "Tool for my friends",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "nodemon api/index.js --ignore components"
+    "dev": "nodemon api/index.js --ignore components",
+    "prod": "node api/index.js --ignore components"
   },
   "main": "index.js",
   "repository": "git@github.com:tiberiusuciu/songify.git",
