@@ -9,6 +9,7 @@ module.exports = {
 		UPDATE_LINK: 'UPDATE_LINK',
 		SUBMIT_LINK: 'SUBMIT_LINK',
 		MUSIC_DOWNLOAD: 'MUSIC_DOWNLOAD',
+		MUSIC_FAIL: 'MUSIC_FAIL',
 	},
 	commandNames: {
 		EAT: 'eat',

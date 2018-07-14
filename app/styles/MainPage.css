@@ -3,38 +3,122 @@
 	padding: 0px;
 }
 
+:local(.title) {
+	margin-top: 150px;
+	margin-bottom: 40px;
+	color: white;
+}
+
 :local(.mainBody) {
-	background-color: white;
-	padding-bottom: 40px;
+	height: 100vh;
+	background: url("/images/city.jpg");
+	background-attachment:fixed;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* padding-bottom: 40px; */
+	position: relative;
+	/* padding-bottom: 10em; */
 }
 
 :local(.contentAlignment) {
 	display: block;
-	margin-top: 200px;
+	/* margin-top: 4em; */
 	width: 100%;
 	text-align: center;
+	overflow-y: scroll;
 }
 
 :local(.inputElement) {
-	width: 500px;
+	margin-top: 40px;
+	width: 90%;
+	height: 5em;
+	border: 2px solid black;
+	font-size: 2em;
 	text-align: center;
 	display: block;
 	margin: auto;
 }
 
+:local(.gradient) {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	background-color: #333333;
+	opacity: .5;
+	width: 100%;
+	text-align: center;
+}
+
+:local(.loading) {
+	/* display: block; */
+	font-size: 10em;
+	color: white;
+	margin-top: 1.5em;
+	font-weight: bolder;
+}
+
 :local(.downloadButton) {
-	background-color: green;
+	width: 90%;
+	height: 5em;
+	font-size: 2em;
+	border: none;
+	line-height: 5em;
 	margin: auto;
 	margin-top: 50px;
 	color: white;
 	font-weight: bolder;
-	height: 50px;
-	line-height: 50px;
+	transition: background-color .5s;
+	opacity: .85;
+	margin-bottom: 60px;
+
+	background: rgba(198,84,255,1);
+	background: -moz-linear-gradient(top, rgba(198,84,255,1) 0%, rgba(12,152,171,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(198,84,255,1)), color-stop(100%, rgba(12,152,171,1)));
+	background: -webkit-linear-gradient(top, rgba(198,84,255,1) 0%, rgba(12,152,171,1) 100%);
+	background: -o-linear-gradient(top, rgba(198,84,255,1) 0%, rgba(12,152,171,1) 100%);
+	background: -ms-linear-gradient(top, rgba(198,84,255,1) 0%, rgba(12,152,171,1) 100%);
+	background: linear-gradient(to bottom, rgba(198,84,255,1) 0%, rgba(12,152,171,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c654ff', endColorstr='#0c98ab', GradientType=0 );
+}
+
+:local(.downloadButton):hover {
+	background-color: #22CC22;
 }
 
 :local(.submitElement) {
-	width: 250px;
+	width: 90%;
+	height: 5em;
+	border: 2px solid black;
+	border: none;
+	font-size: 2em;
 	margin-top: 50px;
+	color: white;
+	opacity: .75;
+	/* max-width: 700px; */
+	/* font-weight: 800; */
+	background-color: #259;
+	transition: background-color .5s;
+	background: rgba(170,0,255,1);
+	background: -moz-linear-gradient(top, rgba(170,0,255,1) 0%, rgba(255,0,136,1) 96%, rgba(255,0,136,1) 100%);
+	background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(170,0,255,1)), color-stop(96%, rgba(255,0,136,1)), color-stop(100%, rgba(255,0,136,1)));
+	background: -webkit-linear-gradient(top, rgba(170,0,255,1) 0%, rgba(255,0,136,1) 96%, rgba(255,0,136,1) 100%);
+	background: -o-linear-gradient(top, rgba(170,0,255,1) 0%, rgba(255,0,136,1) 96%, rgba(255,0,136,1) 100%);
+	background: -ms-linear-gradient(top, rgba(170,0,255,1) 0%, rgba(255,0,136,1) 96%, rgba(255,0,136,1) 100%);
+	background: linear-gradient(to bottom, rgba(170,0,255,1) 0%, rgba(255,0,136,1) 96%, rgba(255,0,136,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa00ff', endColorstr='#ff0088', GradientType=0 );
+}
+
+:local(.submitElement):hover {
+	background-color: #07B;
+}
+
+:local(.error) {
+	color: red;
+	display: block;
+	margin: auto;
+	font-size: 2em;
+	margin-top: 40px;
 }
 
 :local(.MenuSelectionRow) {

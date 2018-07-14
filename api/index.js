@@ -57,10 +57,29 @@ io.on('connection', function (socket) {
           }
           console.log(stdout);
           var pattern = "(?!(.*/?m?u?s?i?c?/))(.*.mp3)";
-					var filename = stdout.match(pattern)[0];
-          io.emit('action', {type: config.actionConst.MUSIC_DOWNLOAD, meta: {remote: false}, filename: filename});
-				});
-		}
+
+          var result = stdout.match(pattern);
+          if (result) {
+            var filename = stdout.match(pattern)[0];
+
+            console.log(filename);
+            setTimeout(() => {
+              fs.unlink(__dirname + '/public/music/' + filename, function(error) {
+                  if (error) {
+                      throw error;
+                  }
+                  console.log('Deleted', filename);
+              });
+            }, 60000);
+
+            socket.emit('action', {type: config.actionConst.MUSIC_DOWNLOAD, meta: {remote: false}, filename: filename});
+          }
+          else {
+            console.log("Something went wrong with the file generation!");
+            socket.emit('action', {type: config.actionConst.MUSIC_FAIL, meta: {remote: false}});
+          }
+			  });
+	    }
 	})
 
 	socket.on("disconnect", function () {

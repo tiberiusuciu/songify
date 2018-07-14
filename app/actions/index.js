@@ -10,6 +10,7 @@ export const NEW_USER = config.actionConst.NEW_USER;
 export const UPDATE_LINK = config.actionConst.UPDATE_LINK;
 export const SUBMIT_LINK = config.actionConst.SUBMIT_LINK;
 export const MUSIC_DOWNLOAD = config.actionConst.MUSIC_DOWNLOAD;
+export const MUSIC_FAIL = config.actionConst.MUSIC_FAIL;
 
 function action(type, payload = {}) {
 	return { type, ...payload };

@@ -17,6 +17,8 @@ const mapStateToProps = (state, ownProps) => {
 		link: state.link,
 		musiclink: state.musiclink,
 		hidebutton: state.hidebutton,
+		loading: state.loading,
+		error: state.error,
 		// referredId: ownProps.location.query.referredId,
 	};
 };

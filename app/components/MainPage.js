@@ -1,20 +1,8 @@
 import React, { Component } from 'react';
 
-// import PostList from './PostList';
-// import DashBoard from './DashBoard';
-// import NavigatorBar from './NavigatorBar';
-// import MenuSelection from './MenuSelection';
-// import SearchBox from './SearchBox';
-// import Dashboard from './Dashboard';
-
 import styles from '../styles/MainPage.css';
 
 class MainPage extends Component {
-
-	// linkChange(e) {
-	// 	this.props.onLinkChange(e.target.value);
-	// }
-
 	checkForVisible(check) {
 		if (check) {
 			return "none";
@@ -24,11 +12,35 @@ class MainPage extends Component {
 		}
 	}
 
+	checkForLoading(isLoading) {
+		if (isLoading) {
+			return "block";
+		}
+		else {
+			return "none";
+		}
+	}
+
+	checkForError(error) {
+		if (error) {
+			return "block";
+		}
+		else {
+			return "none";
+		}
+	}
+
+	copyClipboard(link) {
+		window.getSelection().selectAllChildren( document.getElementById("anotherLink"));
+	  document.execCommand("copy");
+	}
+
 	render() {
 
 		return (
 			<div className={"row " + styles.mainRowStyling + " " + styles.mainBody}>
 				<div className={styles.contentAlignment}>
+					<h1 className={styles.title}>&middot; Songify &middot;</h1>
 					<form>
 						<input placeholder="- Link for youtube video here -" className={styles.inputElement} onChange={(e) => {this.props.onLinkChange(e.target.value);}} value={this.props.link} />
 						<input type="submit" className={styles.submitElement} onClick={(e) => {
@@ -36,7 +48,12 @@ class MainPage extends Component {
 							this.props.onSubmitLink(this.props.link)
 						}}/>
 					</form>
-					<div className={styles.downloadButton} style={{display: this.checkForVisible(this.props.hidebutton)}}><div>{this.props.musiclink}</div></div>
+					<div className={styles.gradient} style={{display: this.checkForLoading(this.props.loading)}}>
+						<div className={styles.loading}>Loading...</div>
+					</div>
+					<div onClick={() => {this.copyClipboard(this.props.musiclink)}} className={styles.downloadButton} style={{display: this.checkForVisible(this.props.hidebutton)}}><div id="copyText">Click Here To Copy Download Link!</div></div>
+					<div className={styles.error} style={{display: this.checkForError(this.props.error)}}>There was an error, please try again!</div>
+					<div id="anotherLink" style={{fontSize:0}}>{this.props.musiclink}</div>
 				</div>
 			</div>
 		)
@@ -44,18 +61,3 @@ class MainPage extends Component {
 };
 
 export default MainPage;
-
-
-// <NavigatorBar />
-// <div classNamehttps://www.youtube.com/watch?v=diLp6hUqvVkhttps://www.youtube.com/watch?v=diLp6hUqvVk={"col-12 " + styles.noPadding}>
-// <DashBoard />
-// </div>
-// <div className={"col-12 " + styles.noPadding}>
-// <div className={"row " + styles.mainRowStyling}>
-// <div className="col" ></div>
-// <div className={"col-8 " + styles.noPadding}>
-// <PostList />
-// </div>
-// <div className="col"></div>
-// </div>
-// </div>
