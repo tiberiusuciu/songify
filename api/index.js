@@ -49,7 +49,7 @@ io.on('connection', function (socket) {
 				link = action.link;
 
 				var child = require('child_process').exec;
-				var executablePath = __dirname + "/../lib/youtube-dl -x --audio-format mp3 " + link + ' -o \'' + __dirname + '/public/music/%(title)s.%(ext)s\'';
+				var executablePath = __dirname + "/../lib/youtube-dl -x --audio-format mp3 --embed-thumbnail " + link + ' -o \'' + __dirname + '/public/music/%(title)s.%(ext)s\' ';
 
 				child(executablePath, function(err, stdout, stderr) {
           if (stderr) {
